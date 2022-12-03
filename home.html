@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Validação</title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <script>
+        function valida_entrada() {
+            const url = new URLSearchParams(window.location.search)
+            let acesso = url.get('acesso')
+
+            if (acesso === "1") {
+                document.getElementById('textoEntrada').innerHTML = "Olá! Gostaria de te dar boas vindas a Cervejaria do Pericles. Aqui você encontrará as melhores bebidas do Brasil!"
+                document.getElementById('btnEntrar').style.display = "block"
+            } else {
+                document.getElementById('textoEntrada').innerHTML = "Sinto muito, mas este site só é permitido para maiores de 18 anos! :("
+                document.getElementById('btnEntrar').style.display = "none"
+            }
+        }
+    </script>
+</head>
+<body onload="valida_entrada()">
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="">A Cervejaria</a></li>
+                    <li><a href="">Nossas Cervejas</a></li>
+                    <li><a href="">Delivery</a></li>
+                </ul>
+            </nav>
+            <div class="carrinhoDeCompras">
+                <a href="">
+                    <span>Meu Carrinho</span>
+                    <img src="assets/image/cart.png" alt="Imgem simbolizando um carrinho de compras">
+                </a>
+            </div>
+        </div>
+    </header>
+    <img src="assets/image/logo.png" alt="Imagem contendo 2 canecos de cerveja como se estivessem brindando">
+    <section>
+        <div id="textoEntrada"></div>
+    </section>
+    <button id="btnEntrar">Entrar no Site</button>
+</body>
+</html>
